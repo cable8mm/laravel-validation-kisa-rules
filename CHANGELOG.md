@@ -1,5 +1,13 @@
 # Release Notes
 
+## v0.9.1 - 2024-03-04
+
+### What's Changed
+
+* Correcting a translation message error by [@cable8mm](https://github.com/cable8mm) in https://github.com/cable8mm/laravel-validation-kisa-rules/pull/7
+
+**Full Changelog**: https://github.com/cable8mm/laravel-validation-kisa-rules/compare/v0.9.0...v0.9.1
+
 ## v0.9.0 - 2024-03-04
 
 ### What's Changed
