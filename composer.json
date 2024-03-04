@@ -1,0 +1,59 @@
+{
+    "name": "cable8mm/laravel-validation-kisa-rules",
+    "description": "A set of useful Laravel validation password rules for KISA",
+    "keywords": [
+        "cable8mm",
+        "laravel-validation-kisa-rules"
+    ],
+    "homepage": "https://github.com/cable8mm/laravel-validation-kisa-rules",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Samgu Lee",
+            "email": "cable8mm@gmail.com",
+            "homepage": "https://www.palgle.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "illuminate/support": "^8.0|^9.0|^10.0|^11.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.0",
+        "orchestra/testbench": "^6.23|^7.0|^8.0|^9.0",
+        "pestphp/pest": "^1.23|^2.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Cable8mm\\ValidationKisaRules\\": "src",
+            "Cable8mm\\ValidationKisaRules\\Database\\Factories\\": "database/factories"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Cable8mm\\ValidationKisaRules\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage-html coverage",
+        "format": "./vendor/bin/pint",
+        "inspect": "./vendor/bin/pint --test"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Cable8mm\\ValidationKisaRules\\ValidationKisaRulesServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
