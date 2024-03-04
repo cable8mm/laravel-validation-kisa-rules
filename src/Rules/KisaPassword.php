@@ -6,6 +6,8 @@ use Illuminate\Contracts\Validation\Rule;
 
 class KisaPassword implements Rule
 {
+    protected string $attribute;
+
     /**
      * Create a new rule instance.
      *
@@ -25,20 +27,22 @@ class KisaPassword implements Rule
      */
     public function passes($attribute, $value)
     {
+        $this->attribute = $attribute;
+
         $valueLength = strlen($value);
         $validatedCount = 0;
 
-        // 문자 1개 이상
+        // Rule 1. The string must contain at least one character.
         if (preg_match('/[a-zA-Z]/', $value)) {
             $validatedCount++;
         }
 
-        // 숫자 1개 이상
+        // Rule 2. The string must contain at least one digit.
         if (preg_match('/\d/', $value)) {
             $validatedCount++;
         }
 
-        // 특수 문자 1개 이상
+        // Rule 3. The string must contain at least one SPECIAL CHRACTER.
         if (preg_match('/[!@#$%^&*()_+|~=`{}\[\]:";\'<>?,.\/]/', $value)) {
             $validatedCount++;
         }
@@ -47,12 +51,16 @@ class KisaPassword implements Rule
             return false;
         }
 
-        // 1가지 이상 10자-20자
+        // Condition 1:
+        // If one rule is satisfied, the length of the string must be
+        // between 10 and 20 characters (including 10 and 20).
         if ($validatedCount === 1 && ($valueLength < 10 || $valueLength > 20)) {
             return false;
         }
 
-        // 2가지 이상 8자-20자
+        // Condition 2:
+        // If two or more rules are satisfied, the length of the string must be
+        // between 8 and 20 characters (including 8 and 20).
         if ($validatedCount >= 2 && ($valueLength < 8 || $valueLength > 20)) {
             return false;
         }
@@ -67,6 +75,8 @@ class KisaPassword implements Rule
      */
     public function message()
     {
-        return __('The :attribute must follow password rules.');
+        return __('validationKisaRules::messages', [
+            'attribute' => $this->attribute,
+        ]);
     }
 }
