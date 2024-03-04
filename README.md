@@ -2,7 +2,6 @@
 
 [![code-style](https://github.com/cable8mm/laravel-validation-kisa-rules/actions/workflows/code-style.yml/badge.svg)](https://github.com/cable8mm/laravel-validation-kisa-rules/actions/workflows/code-style.yml)
 [![run-tests](https://github.com/cable8mm/laravel-validation-kisa-rules/actions/workflows/run-tests.yml/badge.svg)](https://github.com/cable8mm/laravel-validation-kisa-rules/actions/workflows/run-tests.yml)
-[![update-changelog](https://github.com/cable8mm/laravel-validation-kisa-rules/actions/workflows/update-changelog.yml/badge.svg)](https://github.com/cable8mm/laravel-validation-kisa-rules/actions/workflows/update-changelog.yml)
 [![Packagist Version](https://img.shields.io/packagist/v/cable8mm/laravel-validation-kisa-rules)](https://packagist.org/packages/cable8mm/laravel-validation-kisa-rules)
 [![Packagist Downloads](https://img.shields.io/packagist/dt/cable8mm/laravel-validation-kisa-rules)](https://packagist.org/packages/cable8mm/laravel-validation-kisa-rules/stats)
 [![Packagist Dependency Version](https://img.shields.io/packagist/dependency-v/cable8mm/laravel-validation-kisa-rules/php)](https://packagist.org/packages/cable8mm/laravel-validation-kisa-rules)
@@ -10,6 +9,25 @@
 [![Packagist License](https://img.shields.io/packagist/l/cable8mm/laravel-validation-kisa-rules)](https://github.com/cable8mm/laravel-validation-kisa-rules/blob/main/LICENSE.md)
 
 This repository contains a helpful Laravel validation rule for KISA passwords. KISA is an organization dedicated to securing the internet network in South Korea. Major websites operating in South Korea are required to adhere to KISA password standards. Therefore, this is a small library designed to verify passwords according to the KISA standard.
+
+## Features
+
+- [x] Implement support for KISA standard validation in Laravel
+- [x] Enable easy installation via Composer
+
+## Support & Tested
+
+| Available | PHP | Laravel |
+| :-------: | :-: | :-----: |
+|    ✅     | 8.0 |   9.x   |
+|    ✅     | 8.1 |   9.x   |
+|    ✅     | 8.1 |  10.x   |
+|    ✅     | 8.2 |   9.x   |
+|    ✅     | 8.2 |  10.x   |
+|    ✅     | 8.2 |  11.x   |
+|    ✅     | 8.3 |   9.x   |
+|    ✅     | 8.3 |  10.x   |
+|    ✅     | 8.3 |  11.x   |
 
 ## Installation
 
@@ -63,7 +81,7 @@ composer inspect
 
 ## Reference
 
--   KISA password documents : [go link](https://xn--3e0bx5e6xzftae3gxzpskhile.xn--3e0b707e/2060305/form?postSeq=14&page=1)
+- KISA password documents : [go link](https://xn--3e0bx5e6xzftae3gxzpskhile.xn--3e0b707e/2060305/form?postSeq=14&page=1)
 
 ## License
 
