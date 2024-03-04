@@ -1,0 +1,44 @@
+name: run-tests
+
+on:
+  workflow_dispatch:
+  push:
+    branches-ignore:
+      - "dependabot/npm_and_yarn/*"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: true
+      matrix:
+        os: [ubuntu-latest]
+        php: [8.2]
+        laravel: ["10.*"]
+        include:
+          - laravel: 10.*
+            testbench: 8.*
+
+    name: PHP ${{ matrix.php }} - L${{ matrix.laravel }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          coverage: none
+
+      - name: Validate composer.json and composer.lock
+        run: composer validate
+
+      - name: Install dependencies
+        run: |
+          composer require "laravel/framework:${{ matrix.laravel }}" "nesbot/carbon:^2.63" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update
+          composer update --prefer-dist --no-interaction
+
+      - name: Execute tests
+        run: composer test
