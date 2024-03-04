@@ -1,5 +1,14 @@
 # Release Notes
 
+## v1.0.0 - 2024-03-04
+
+### What's Changed
+
+* Update the EditorConfig by [@cable8mm](https://github.com/cable8mm) in https://github.com/cable8mm/laravel-validation-kisa-rules/pull/8
+* Testing to extend various laravel versions by [@cable8mm](https://github.com/cable8mm) in https://github.com/cable8mm/laravel-validation-kisa-rules/pull/9
+
+**Full Changelog**: https://github.com/cable8mm/laravel-validation-kisa-rules/compare/v0.9.1...v1.0.0
+
 ## v0.9.1 - 2024-03-04
 
 ### What's Changed
