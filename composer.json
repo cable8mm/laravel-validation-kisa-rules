@@ -26,8 +26,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Cable8mm\\ValidationKisaRules\\": "src",
-            "Cable8mm\\ValidationKisaRules\\Database\\Factories\\": "database/factories"
+            "Cable8mm\\ValidationKisaRules\\": "src"
         }
     },
     "autoload-dev": {
@@ -36,9 +35,8 @@
         }
     },
     "scripts": {
-        "test": "vendor/bin/pest",
-        "test-coverage": "vendor/bin/pest --coverage-html coverage",
-        "format": "./vendor/bin/pint",
+        "test": "vendor/bin/phpunit tests",
+        "lint": "./vendor/bin/pint",
         "inspect": "./vendor/bin/pint --test"
     },
     "config": {
