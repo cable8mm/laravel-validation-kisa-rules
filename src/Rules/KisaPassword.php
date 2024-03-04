@@ -75,7 +75,7 @@ class KisaPassword implements Rule
      */
     public function message()
     {
-        return __('validationKisaRules::messages', [
+        return __('validationKisaRules::messages.kisa_password', [
             'attribute' => $this->attribute,
         ]);
     }

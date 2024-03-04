@@ -8,10 +8,10 @@ class ValidationKisaRulesServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        $this->publishes([
-            __DIR__.'/../resources/lang' => resource_path('lang/vendor/validationKisaRules'),
-        ]);
+        $this->loadTranslationsFrom(__DIR__.'/../lang', 'validationKisaRules');
 
-        $this->loadTranslationsFrom(__DIR__.'/../resources/lang/', 'validationKisaRules');
+        $this->publishes([
+            __DIR__.'/../lang' => $this->app->langPath('vendor/validationKisaRules'),
+        ]);
     }
 }
