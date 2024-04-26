@@ -1,4 +1,4 @@
-# Laravel Validatioin KISA Rules
+# Laravel Validation KISA Rules
 
 [![code-style](https://github.com/cable8mm/laravel-validation-kisa-rules/actions/workflows/code-style.yml/badge.svg)](https://github.com/cable8mm/laravel-validation-kisa-rules/actions/workflows/code-style.yml)
 [![run-tests](https://github.com/cable8mm/laravel-validation-kisa-rules/actions/workflows/run-tests.yml/badge.svg)](https://github.com/cable8mm/laravel-validation-kisa-rules/actions/workflows/run-tests.yml)
