@@ -1,5 +1,14 @@
 # Release Notes
 
+## v1.0.1 - 2024-04-26
+
+### What's Changed
+
+* Include supported versions for Laravel and PHP into the README by [@cable8mm](https://github.com/cable8mm) in https://github.com/cable8mm/laravel-validation-kisa-rules/pull/10
+* Fix typo by [@cable8mm](https://github.com/cable8mm) in https://github.com/cable8mm/laravel-validation-kisa-rules/pull/11
+
+**Full Changelog**: https://github.com/cable8mm/laravel-validation-kisa-rules/compare/v1.0.0...v1.0.1
+
 ## v1.0.0 - 2024-03-04
 
 ### What's Changed
