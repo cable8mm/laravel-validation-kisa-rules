@@ -1,5 +1,13 @@
 # Release Notes
 
+## v1.1.0 - 2025-03-04
+
+### What's Changed
+
+* Add laravel 12 required by [@cable8mm](https://github.com/cable8mm) in https://github.com/cable8mm/laravel-validation-kisa-rules/pull/12
+
+**Full Changelog**: https://github.com/cable8mm/laravel-validation-kisa-rules/compare/v1.0.1...v1.1.0
+
 ## v1.0.1 - 2024-04-26
 
 ### What's Changed
