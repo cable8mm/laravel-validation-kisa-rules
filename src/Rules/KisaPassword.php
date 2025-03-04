@@ -2,33 +2,18 @@
 
 namespace Cable8mm\ValidationKisaRules\Rules;
 
-use Illuminate\Contracts\Validation\Rule;
+use Closure;
+use Illuminate\Contracts\Validation\ValidationRule;
 
-class KisaPassword implements Rule
+class KisaPassword implements ValidationRule
 {
-    protected string $attribute;
-
-    /**
-     * Create a new rule instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        //
-    }
-
     /**
      * Determine if the validation rule passes.
      *
-     * @param  string  $attribute
-     * @param  mixed  $value
-     * @return bool
+     * @param  \Closure(string, ?string=): \Illuminate\Translation\PotentiallyTranslatedString  $fail
      */
-    public function passes($attribute, $value)
+    public function validate(string $attribute, mixed $value, Closure $fail): void
     {
-        $this->attribute = $attribute;
-
         $valueLength = strlen($value);
         $validatedCount = 0;
 
@@ -42,41 +27,27 @@ class KisaPassword implements Rule
             $validatedCount++;
         }
 
-        // Rule 3. The string must contain at least one SPECIAL CHRACTER.
+        // Rule 3. The string must contain at least one **Special Character**.
         if (preg_match('/[!@#$%^&*()_+|~=`{}\[\]:";\'<>?,.\/]/', $value)) {
             $validatedCount++;
         }
 
         if ($validatedCount === 0) {
-            return false;
+            $fail('The :attribute must follow password rules.')->translate();
         }
 
         // Condition 1:
         // If one rule is satisfied, the length of the string must be
         // between 10 and 20 characters (including 10 and 20).
         if ($validatedCount === 1 && ($valueLength < 10 || $valueLength > 20)) {
-            return false;
+            $fail('The :attribute must follow password rules.')->translate();
         }
 
         // Condition 2:
         // If two or more rules are satisfied, the length of the string must be
         // between 8 and 20 characters (including 8 and 20).
         if ($validatedCount >= 2 && ($valueLength < 8 || $valueLength > 20)) {
-            return false;
+            $fail('The :attribute must follow password rules.')->translate();
         }
-
-        return true;
-    }
-
-    /**
-     * Get the validation error message.
-     *
-     * @return string
-     */
-    public function message()
-    {
-        return __('validationKisaRules::messages.kisa_password', [
-            'attribute' => $this->attribute,
-        ]);
     }
 }

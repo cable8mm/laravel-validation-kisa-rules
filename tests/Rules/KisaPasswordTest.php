@@ -3,6 +3,7 @@
 namespace Cable8mm\ValidationKisaRules\Tests\Rules;
 
 use Cable8mm\ValidationKisaRules\Rules\KisaPassword;
+use Illuminate\Support\Facades\Validator;
 use Orchestra\Testbench\Concerns\WithWorkbench;
 use Orchestra\Testbench\TestCase;
 
@@ -21,8 +22,6 @@ class KisaPasswordTest extends TestCase
 
     public function test_pass_according_to_kisa_password_rule_or_not()
     {
-        $rule = new KisaPassword();
-
         $passwords = [
             '12345678' => false,
             'abcdefgha' => false,
@@ -38,18 +37,24 @@ class KisaPasswordTest extends TestCase
         ];
 
         foreach ($passwords as $password => $expected) {
-            $actual = $rule->passes('attribute', $password);
+            $input = ['name' => $password];
+            $rules = ['name' => new KisaPassword];
 
-            $this->assertEquals($expected, $actual, $password);
+            if ($expected) {
+                $this->assertTrue(Validator::make($input, $rules)->passes());
+            } else {
+                $this->assertFalse(Validator::make($input, $rules)->passes());
+            }
         }
     }
 
     public function test_validate_message_can_be_seen()
     {
-        $rule = new KisaPassword();
+        $rule = new KisaPassword;
 
-        $actual = $rule->passes('attribute', '1');
+        $input = ['name' => '12345678'];
+        $rules = ['name' => new KisaPassword];
 
-        $this->assertEquals('validationKisaRules::messages.kisa_password', $rule->message());
+        $this->assertSame('The name must follow password rules.', Validator::make($input, $rules)->messages()->first());
     }
 }
