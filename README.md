@@ -19,15 +19,13 @@ This repository contains a helpful Laravel validation rule for KISA passwords. K
 
 | Available | PHP | Laravel |
 | :-------: | :-: | :-----: |
-|    ✅     | 8.0 |   9.x   |
-|    ✅     | 8.1 |   9.x   |
 |    ✅     | 8.1 |  10.x   |
-|    ✅     | 8.2 |   9.x   |
 |    ✅     | 8.2 |  10.x   |
 |    ✅     | 8.2 |  11.x   |
-|    ✅     | 8.3 |   9.x   |
+|    ✅     | 8.2 |  12.x   |
 |    ✅     | 8.3 |  10.x   |
 |    ✅     | 8.3 |  11.x   |
+|    ✅     | 8.3 |  12.x   |
 
 ## Installation
 
