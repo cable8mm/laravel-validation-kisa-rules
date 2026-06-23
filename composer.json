@@ -1,9 +1,12 @@
 {
     "name": "cable8mm/laravel-validation-kisa-rules",
-    "description": "A set of useful Laravel validation password rules for KISA",
+    "description": "Laravel validation rules for KISA-compliant passwords.",
     "keywords": [
-        "cable8mm",
-        "laravel-validation-kisa-rules"
+        "laravel",
+        "validation",
+        "password",
+        "kisa",
+        "korea"
     ],
     "homepage": "https://github.com/cable8mm/laravel-validation-kisa-rules",
     "license": "MIT",
